@@ -1,0 +1,47 @@
+{
+  "name": "pholderise",
+  "version": "0.0.42",
+  "description": "Scatter files into new subfolders based on their modified time",
+  "main": "dist/app.js",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "bin": {
+    "pholderise": "dist/app.js"
+  },
+  "scripts": {
+    "start": "tsc && node --trace-warnings dist/app.js",
+    "test": "tsc && node --trace-warnings dist/test.js",
+    "build": "tsc",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "watch-node": "nodemon --trace-warnings dist/app.js --verbose --ignore 'debug.log' --delay 1",
+    "watch-ts": "tsc -w",
+    "prepublish": "npm run build"
+  },
+  "author": "Pierpaolo Tommasi",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.9",
+    "eslint": "^8.0.1",
+    "typescript": "^4.4.4",
+    "why-is-node-running": "^2.2.1",
+    "wtfnode": "^0.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptommasi/pholderise.git"
+  },
+  "keywords": [
+    "file",
+    "organiser",
+    "photos"
+  ],
+  "bugs": {
+    "url": "https://github.com/ptommasi/pholderise/issues"
+  },
+  "homepage": "https://github.com/ptommasi/pholderise#readme"
+}
