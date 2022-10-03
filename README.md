@@ -107,16 +107,20 @@ Some links I used:
 
 
 And finally some docker commands if you want to play with it directly:
- - Enter the UBI image and play with it directly, mounting the project folder under _/src_ (you can repeat the steps of the dockerfile and see what's going on):
+ - Enter the UBI image (rootless variant) and play with it directly, mounting the project folder under _/src_ (you can repeat the steps of the dockerfile and see what's going on):
     > `docker run -v ${PWD}:/src -it registry.access.redhat.com/ubi8/nodejs-16 /bin/bash`
+ - Enter the Node image (root variant), but remove it once we are finished playing around:
+    > `docker run -v ${PWD}:/src --rm -it node:16 /bin/bash`
  - The basic build & run:
     > `docker build -t pholderise:test .`
 
-    > docker run -it pholderise:test /bin/bash
+    > `docker run -it pholderise:test /bin/bash`
  - The container is rootless, this is an option to gain root access:
-    > docker run -u root -it pholderise:test /bin/bash
+    > `docker run -u root -it pholderise:test /bin/bash`
  - If you just want to run the container una tantum, --rm will do the cleanup for you:
-    > docker run -v ${PWD}:/mnt --rm -it pholderise:test /bin/bash
+    > `docker run -v ${PWD}:/mnt --rm -it pholderise:test /bin/bash`
+ - If you wish to manually push it to your Docker.io repo, I recommend tagging it and then pushing it:
+   >
 
 ## Disclaimer
 
