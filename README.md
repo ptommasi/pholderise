@@ -1,4 +1,4 @@
-**** WORK IN PROGRESS ****
+**** I didn't find the time to finish the docker image, but the npm script is already available. ****
 
 
 # Pholderise
